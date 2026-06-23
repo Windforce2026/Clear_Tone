@@ -1,0 +1,13 @@
+- [ ] Rewrite index.html: remove tel/call CTAs + convert all to WhatsApp + correct floating button (WhatsApp only)
+- [ ] Update contact.html: convert direct contact card + emergency section + floating button + footer
+- [ ] Update about.html: drawer/mobile contact + footer + floating button
+- [ ] Update services.html: CTA call now + drawer/mobile contact + footer + floating button
+- [ ] Update hearing-aids.html: drawer/mobile contact + footer + floating button
+- [ ] Update speech-therapy.html: drawer/mobile contact + floating button
+- [ ] Update testimonials.html: drawer/mobile contact + footer + floating button
+- [ ] Update faq.html: footer phone + floating button
+- [ ] Add/ensure WhatsApp button CSS per spec (pulse + hover scale + glow + transition + glassmorphism + sizes + tooltip)
+- [ ] Ensure all WhatsApp buttons link to https://wa.me/918750404455
+- [ ] Ensure all button texts updated: Call Now→WhatsApp Now, Call Us→Chat on WhatsApp, Call Today→WhatsApp Today
+- [ ] Remove every telephone handset icon and any tel: links/buttons across project
+- [ ] Run quick manual check by opening each HTML file
