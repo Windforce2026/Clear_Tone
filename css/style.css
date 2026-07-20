@@ -703,7 +703,520 @@ textarea{min-height:110px; resize:vertical}
 }
 [data-theme="dark"] .video-ph{background: rgba(12,17,33,.35)}
 
-/* Utility */
+/* =============================================
+   PREMIUM BRAND CARDS
+   ============================================= */
+.brand-card {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  backdrop-filter: var(--glass);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.22,.61,.36,1), border-color .35s ease, box-shadow .35s ease;
+  position: relative;
+}
+.brand-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(212,175,55,.35);
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(212,175,55,.12);
+}
+.brand-card .brand-img-wrap {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, rgba(139,0,0,.08), rgba(212,175,55,.08));
+}
+.brand-card .brand-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.brand-card:hover .brand-img-wrap img {
+  transform: scale(1.06);
+}
+.brand-card .brand-logo-placeholder {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.72);
+  backdrop-filter: var(--glass);
+  border: 1px solid rgba(212,175,55,.22);
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: .04em;
+  color: var(--text);
+}
+.brand-card .brand-body {
+  padding: 20px;
+}
+.brand-card .brand-body h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  letter-spacing: -.01em;
+}
+.brand-card .brand-body p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.brand-card .brand-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.brand-card .brand-tags span {
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(139,0,0,.06);
+  border: 1px solid rgba(139,0,0,.12);
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--primary);
+}
+.brand-card .brand-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+[data-theme="dark"] .brand-card .brand-logo-placeholder {
+  background: rgba(12,17,33,.72);
+}
+
+/* =============================================
+   COMPARISON TABLE WITH ICONS
+   ============================================= */
+.comp-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  backdrop-filter: var(--glass);
+  box-shadow: var(--shadow-md);
+}
+.comp-table th,
+.comp-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--stroke);
+  text-align: center;
+  font-weight: 650;
+  font-size: 13px;
+}
+.comp-table th {
+  background: rgba(139,0,0,.06);
+  font-weight: 900;
+  color: var(--text);
+  text-align: left;
+}
+.comp-table td:first-child {
+  text-align: left;
+  font-weight: 800;
+  color: var(--text);
+}
+.comp-table tr:last-child td {
+  border-bottom: none;
+}
+.comp-table .icon-check {
+  color: #16a34a;
+  font-size: 16px;
+}
+.comp-table .icon-cross {
+  color: var(--muted);
+  font-size: 16px;
+  opacity: .4;
+}
+.comp-table .icon-partial {
+  color: var(--accent);
+  font-size: 16px;
+}
+[data-theme="dark"] .comp-table th {
+  background: rgba(12,17,33,.40);
+}
+
+/* =============================================
+   PRODUCT CARDS
+   ============================================= */
+.prod-card {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  backdrop-filter: var(--glass);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform .3s ease, border-color .3s ease;
+}
+.prod-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212,175,55,.30);
+}
+.prod-card .prod-img {
+  height: 170px;
+  background: linear-gradient(135deg, rgba(139,0,0,.08), rgba(212,175,55,.08));
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.prod-card .prod-img span {
+  font-size: 36px;
+  opacity: .25;
+  font-weight: 100;
+  color: var(--muted);
+}
+.prod-card .prod-badges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.prod-card .prod-badge {
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+.prod-card .prod-badge--rechargeable {
+  background: #16a34a;
+  color: #fff;
+}
+.prod-card .prod-badge--bluetooth {
+  background: #2563eb;
+  color: #fff;
+}
+.prod-card .prod-badge--ai {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+}
+.prod-card .prod-body {
+  padding: 18px;
+}
+.prod-card .prod-body h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+.prod-card .prod-body .prod-tech {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.prod-card .prod-body .prod-rating {
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+.prod-card .prod-body .prod-rating span {
+  color: var(--muted);
+  font-size: 11px;
+  margin-left: 4px;
+}
+.prod-card .prod-cta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* =============================================
+   WHY CHOOSE CLEAR TONE (Feature Cards)
+   ============================================= */
+.feature-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  backdrop-filter: var(--glass);
+  box-shadow: var(--shadow-sm);
+  padding: 22px 20px;
+  text-align: center;
+  transition: transform .3s ease, border-color .3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212,175,55,.28);
+}
+.feature-card .feat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(139,0,0,.10), rgba(212,175,55,.10));
+  border: 1px solid rgba(212,175,55,.18);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 12px;
+  font-size: 22px;
+}
+.feature-card h3 {
+  font-size: 15px;
+  margin: 0 0 6px;
+}
+.feature-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =============================================
+   BLOG CARDS
+   ============================================= */
+.blog-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  backdrop-filter: var(--glass);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform .3s ease, border-color .3s ease;
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212,175,55,.28);
+}
+.blog-card .blog-img {
+  height: 160px;
+  background: linear-gradient(135deg, rgba(139,0,0,.08), rgba(212,175,55,.08));
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.blog-card .blog-img span {
+  font-size: 32px;
+  opacity: .2;
+}
+.blog-card .blog-body {
+  padding: 18px;
+}
+.blog-card .blog-body .blog-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 10px;
+  background: rgba(139,0,0,.07);
+  border: 1px solid rgba(139,0,0,.12);
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 8px;
+}
+.blog-card .blog-body h3 {
+  font-size: 15px;
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+.blog-card .blog-body p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0 0 12px;
+}
+
+/* =============================================
+   CONTACT CTA BANNER
+   ============================================= */
+.cta-banner {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--stroke);
+  background: linear-gradient(135deg, rgba(139,0,0,.10), rgba(212,175,55,.12));
+  backdrop-filter: var(--glass);
+  box-shadow: var(--shadow-lg);
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner:before {
+  content: "";
+  position: absolute;
+  inset: -60px -100px auto -100px;
+  height: 200px;
+  background: radial-gradient(circle at 30% 50%, rgba(212,175,55,.20), transparent 50%);
+  pointer-events: none;
+}
+.cta-banner h2 {
+  font-size: 26px;
+  margin: 0 0 8px;
+  position: relative;
+}
+.cta-banner p {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0 0 20px;
+  position: relative;
+}
+.cta-banner .cta-banner-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .cta-banner { padding: 56px 40px; }
+  .cta-banner h2 { font-size: 32px; }
+}
+
+/* =============================================
+   BRAND HERO PAGES
+   ============================================= */
+.brand-hero {
+  padding: 50px 0 40px;
+  position: relative;
+  overflow: hidden;
+}
+.brand-hero .brand-hero-bg {
+  position: absolute;
+  inset: 0;
+  opacity: .08;
+  pointer-events: none;
+}
+.brand-hero-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+  position: relative;
+}
+@media (min-width: 920px) {
+  .brand-hero-content {
+    grid-template-columns: 1.05fr .95fr;
+  }
+}
+.brand-hero-text .brand-hero-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  border-radius: 18px;
+  background: var(--card);
+  backdrop-filter: var(--glass);
+  border: 1px solid rgba(212,175,55,.22);
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: .06em;
+  margin-bottom: 16px;
+}
+.brand-hero-media {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid rgba(212,175,55,.18);
+  min-height: 260px;
+  background: linear-gradient(135deg, rgba(139,0,0,.08), rgba(212,175,55,.08));
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.brand-hero-media span {
+  font-size: 48px;
+  opacity: .15;
+  font-weight: 100;
+}
+@media (min-width: 920px) {
+  .brand-hero-media { min-height: 360px; }
+}
+
+/* Brand feature grid icons */
+.brand-feat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(139,0,0,.10), rgba(212,175,55,.10));
+  border: 1px solid rgba(212,175,55,.18);
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  font-size: 18px;
+}
+
+/* Sticky consultation button (brand pages) */
+.sticky-consult {
+  position: fixed;
+  bottom: 90px;
+  right: 14px;
+  z-index: 55;
+}
+.sticky-consult .primary-btn {
+  box-shadow: 0 18px 50px rgba(139,0,0,.30);
+  animation: cths-consult-pulse 2.5s ease-in-out infinite;
+}
+@keyframes cths-consult-pulse {
+  0%, 100% { box-shadow: 0 18px 50px rgba(139,0,0,.30); }
+  50% { box-shadow: 0 24px 70px rgba(139,0,0,.45); }
+}
+
+/* Related brands grid */
+.related-brands {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (min-width: 720px) {
+  .related-brands { grid-template-columns: repeat(3, 1fr); }
+}
+.related-brand-item {
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid var(--stroke);
+  background: var(--card2);
+  backdrop-filter: var(--glass);
+  text-align: center;
+  font-weight: 800;
+  font-size: 13px;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.related-brand-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212,175,55,.25);
+}
+
+/* Back to brands link */
+.back-brands {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  background: var(--card2);
+  font-weight: 700;
+  font-size: 13px;
+  transition: transform .2s ease;
+}
+.back-brands:hover {
+  transform: translateX(-3px);
+}
+
+/* =============================================
+   ENHANCED GRID FOR 6-COLUMN LAYOUTS
+   ============================================= */
+.grid-6 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 640px) {
+  .grid-6 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 920px) {
+  .grid-6 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* =============================================
+   UTILITY & OVERRIDES
+   ============================================= */
 .m0{margin:0}
 .mt12{margin-top:12px}
 .mt18{margin-top:18px}
