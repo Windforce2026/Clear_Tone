@@ -888,13 +888,15 @@ textarea{min-height:110px; resize:vertical}
   text-transform: uppercase;
 }
 .prod-card .prod-badge--rechargeable {
-  background: #16a34a;
+  background: #acc4ce;
   color: #fff;
 }
 .prod-card .prod-badge--bluetooth {
-  background: #2563eb;
+  background: #813517;
   color: #fff;
 }
+
+
 .prod-card .prod-badge--ai {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: #fff;
